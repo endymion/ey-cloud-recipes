@@ -73,3 +73,6 @@ require_recipe "emacs"
 
 #uncomment to set the time zone to GMT
 require_recipe "time_zone"
+
+# crontab setup
+require_recipe "crontab"
