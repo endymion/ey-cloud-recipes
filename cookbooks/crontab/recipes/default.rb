@@ -32,7 +32,7 @@ if ['solo','app_master'].include?(node[:instance_role])
       command  "cd /data/venuedriver/current && ./script/runner --environment=production /data/venuedriver/current/cron/guestlist_notifications.rb"
     end
 
-    cron "Guest List Notifications" do
+    cron "Reservation Summary Notifications" do
       minute   '*/5'
       hour     '*'
       day      '*'
