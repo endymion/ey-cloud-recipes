@@ -41,14 +41,14 @@ if ['solo','app_master'].include?(node[:instance_role])
       command  "cd /data/venuedriver/current && ./script/runner --environment=production /data/venuedriver/current/cron/reservations_summary_notifications.rb"
     end
 
-    # cron "Update active/inactive tickets" do
-    #   minute   '0'
-    #   hour     '*/1'
-    #   day      '*'
-    #   month    '*'
-    #   weekday  '*'
-    #   command  "cd /data/venuedriver/current && rake RAILS_ENV=production tickets:update_active"
-    # end
+    cron "Update active/inactive tickets" do
+      minute   '0'
+      hour     '*/1'
+      day      '*'
+      month    '*'
+      weekday  '*'
+      command  "cd /data/venuedriver/current && rake RAILS_ENV=production tickets:update_active"
+    end
 
     cron "Generate Events From Templates" do
       minute   '0'
